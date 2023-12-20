@@ -146,9 +146,19 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
-    }
 
+        String grade = 'F';
+        if(score >= 90){
+            grade = 'A';
+        } else if (score >= 80){
+            grade = 'B';
+        } else if (score >= 70){
+            grade = 'C';
+        } else if (score >= 60){
+            grade = 'D';
+        }
+        return grade; 
+    }
 
     /**
      * Sum all the integers up to a given limit.
