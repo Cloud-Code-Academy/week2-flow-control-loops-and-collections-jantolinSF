@@ -167,13 +167,11 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-        /* 
-         for (){
-            
-         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        Integer sum = 0;
+        for(Integer i=0; i<=intLimit; i++){
+            sum+=i;
+        }
+        return sum;
     }
 
     /**
