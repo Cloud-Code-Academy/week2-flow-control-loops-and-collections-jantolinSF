@@ -181,15 +181,16 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String returnHelloWorld() {
         // Initialize the result String
-
+            String phrase = '';
         // Use a for loop to append 'Hello World!;' to the result string three times
-        /* 
-         for (){
-            
-         }
-        */
+        for(Integer i=0; i<3; i++){
+            phrase = phrase + 'Hello World!; ';
+        }
+        return phrase;
 
-        return null; // Replace null with the variable you used to store the result
+        // Alternate: 
+        // String phrase = 'Hello World!; ';
+        // return phrase.repeat(3);
     }
 
     /**
@@ -203,17 +204,16 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String repeatString(String inputString, Integer repeatCount) {
         // Initialize the result String
+        String result = inputString;
 
         // Use a for loop to append the inputString to the result string repeatCount times
-        /*
-        for () {
-
-            // If it is not the last iteration, add a semicolon to separate the strings
+        if(repeatCount > 1){
+            for(Integer i=1; i < repeatCount; i++){
+            result += '; ' + inputString;    
+            }
         }
-        */
-
         // Return the final result string
-        return null; // Replace null with the variable you used to store the result
+        return result;
     }
 
     /**
