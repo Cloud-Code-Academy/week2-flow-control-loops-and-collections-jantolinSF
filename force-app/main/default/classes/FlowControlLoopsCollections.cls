@@ -85,9 +85,18 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String result ='';
+        if (a > 0) {
+            result = 'Positive';
+        } else if ( a == 0) {
+            result = 'Zero';
+        } else if ( a < 0) {
+            result = 'Negative';
+        } else if (a == null) {
+            result = null;
+        } 
+        return result;   
     }
-
     /**
      * Checks if a number is even or odd.
      * If the number is null, return null.
