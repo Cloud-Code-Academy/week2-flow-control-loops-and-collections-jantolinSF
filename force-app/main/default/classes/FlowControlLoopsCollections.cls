@@ -292,9 +292,13 @@ public with sharing class FlowControlLoopsCollections {
 
         // Loop through the list of integers
             // if the number is negative skip this iteration
-        
-
-        return null; // Replace null with the variable you used to store the result
+        Integer sum = 0;
+        for(Integer currentNum : numbers){
+            if(currentNum > 0){
+                sum += currentNum;
+            }
+        }
+        return sum; 
     }
 
     /**
