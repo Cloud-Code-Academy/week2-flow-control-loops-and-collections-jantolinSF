@@ -28,7 +28,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
-        if ( x > y){
+        if ( x > y ) {
             return 'Hello World!';
         } else {
             return null;
@@ -45,7 +45,7 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Boolean votingEligibility(Integer age) {
         Boolean isEligibleToVote = false;
-        if (age >= 18) {
+        if ( age >= 18 ) {
             isEligibleToVote = true;
         }
         return isEligibleToVote; 
@@ -62,17 +62,13 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
         Integer largestNum = null;
-        if (num1 == num2){
+        if ( num1 == null || num2 == null ) {
+            largestNum = null;
+        } else if ( num1 >= num2 && num1 != null ){
             largestNum = num1;
-        } else if(num1 > num2 && num1 != null){
-            largestNum = num1;
-        } else if(num2 > num1 && num2 != null){
+        } else if(num2 >= num1 && num2 != null){
             largestNum = num2;
-        } else if(num1 == null && num2 == null){
-            largestNum = null;
-        } else {
-            largestNum = null;
-        }
+        } 
         return largestNum;
     }
 
@@ -86,15 +82,15 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String checkNumber(Integer a) {
         String result ='';
-        if (a > 0) {
+        if ( a == null ) {
+            result = null;
+        } else if ( a > 0 ) {
             result = 'Positive';
         } else if ( a == 0) {
             result = 'Zero';
         } else if ( a < 0) {
             result = 'Negative';
-        } else if (a == null) {
-            result = null;
-        } 
+        }
         return result;   
     }
     /**
@@ -106,9 +102,9 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String checkEvenOdd(Integer a) {
         String result = '';
-        if (a == null){
+        if ( a == null ){
             result = null;
-        } else if(Math.mod(a, 2) == 0){
+        } else if ( Math.mod(a, 2) == 0 ) {
             result = 'Even';
         } else {
             result = 'Odd';
@@ -124,9 +120,9 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static String checkString(String a) {
         String result ='';
-        if(a == ''){
+        if ( a == '' ){
             result = 'Empty';
-        } else if (a == null){
+        } else if ( a == null ) {
             result = 'Null';
         } else {
             result = 'Contains Text';
@@ -148,13 +144,13 @@ public with sharing class FlowControlLoopsCollections {
     public static String determineGrade(Integer score) {
 
         String grade = 'F';
-        if(score >= 90){
+        if ( score >= 90 ) {
             grade = 'A';
-        } else if (score >= 80){
+        } else if ( score >= 80 ) {
             grade = 'B';
-        } else if (score >= 70){
+        } else if ( score >= 70 ) {
             grade = 'C';
-        } else if (score >= 60){
+        } else if ( score >= 60 ) {
             grade = 'D';
         }
         return grade; 
@@ -168,8 +164,8 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumUpToLimit(Integer intLimit) {
         Integer sum = 0;
-        for(Integer i=0; i<=intLimit; i++){
-            sum+=i;
+        for( Integer i = 0; i <= intLimit; i++){
+            sum += i;
         }
         return sum;
     }
@@ -183,7 +179,7 @@ public with sharing class FlowControlLoopsCollections {
         // Initialize the result String
             String phrase = '';
         // Use a for loop to append 'Hello World!;' to the result string three times
-        for(Integer i=0; i<3; i++){
+        for( Integer i = 0; i < 3; i++){
             phrase = phrase + 'Hello World!; ';
         }
         return phrase;
@@ -207,8 +203,8 @@ public with sharing class FlowControlLoopsCollections {
         String result = inputString;
 
         // Use a for loop to append the inputString to the result string repeatCount times
-        if(repeatCount > 1){
-            for(Integer i=1; i < repeatCount; i++){
+        if( repeatCount > 1 ){
+            for( Integer i = 1; i < repeatCount; i++){
             result += '; ' + inputString;    
             }
         }
@@ -258,7 +254,7 @@ public with sharing class FlowControlLoopsCollections {
     public static List<Integer> createIntegerList(Integer n) {
         // Create a new list of integers 
         List<Integer> intList = new List<Integer>();
-        for(Integer i=1; i<=n; i++){
+        for(Integer i = 1; i <= n; i++){
             intList.add(i);
         }
         return intList; 
@@ -293,7 +289,7 @@ public with sharing class FlowControlLoopsCollections {
         // Loop through the list of integers
             // if the number is negative skip this iteration
         Integer sum = 0;
-        for(Integer currentNum : numbers){
+        for( Integer currentNum : numbers ){
             if(currentNum > 0){
                 sum += currentNum;
             }
@@ -315,11 +311,18 @@ public with sharing class FlowControlLoopsCollections {
         // Loop through the list of words
             // If the current word is the word to find, exit the loop
         
-        for(String currentWord : words){
-                if(currentWord == wordToFind){
-                    index = words.indexOf(currentWord);
-                    break;
-                }
+        // for(String currentWord : words){
+        //         if(currentWord.equals(wordToFind)){
+        //             index = words.indexOf(currentWord);
+        //             break;
+        //         }
+        // }
+
+        for(Integer i = 0; i < words.size(); i++){
+            if(words.get(i).equals(wordToFind)){
+                index = i;
+                break;
+            }
         }
         return index; 
     }
